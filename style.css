@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff3cac;
+    background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    text-align: center;
+    color: #051b4b;
+    margin-bottom: 20px;
+    font-size: 24px; /* Larger font for the header */
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    flex: 1;
+    border: none;
+    background-color: #edeef0;
+    padding: 12px 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.input-container input:focus {
+    outline: none;
+    background-color: #e0e5eb;
+}
+
+/* Styles for ADD TASK button */
+#add-btn {
+    height: 50px; 
+    border-radius: 25px;
+    border: none;
+    background-color: #fc5845;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+}
+
+#add-btn:hover {
+    background-color: rgba(252, 88, 69, 0.8);
+    transform: scale(1.05); /* Slightly grow the button on hover */
+}
+
+/* Styles for ADD TTL TASK button */
+#ttl-btn {
+    height: 50px; 
+    border-radius: 25px;
+    border: none;
+    background-color: #fc5845; /* Same background color as the ADD TASK button */
+    color: #ffffff; /* Same text color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Same transition effects */
+}
+
+#ttl-btn:hover {
+    background-color: rgba(252, 88, 69, 0.8); /* Same hover effect */
+    transform: scale(1.05); /* Same grow effect on hover */
+}
+
+/* Task List Styles */
+#task-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #edeef0;
+    transition: background-color 0.3s ease;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.text {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #051b4b;
+}
+
+.task-item.active .text {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.task-item .btn-check,
+.task-item .btn-close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-item .btn-check:hover {
+    color: #fc5845;
+}
+
+.task-item .btn-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(252, 88, 69, 0.1);
+}   
+
+.task-item .btn-close:hover {
+    background-color: rgba(252, 88, 69, 0.5);
+}
+
+/* New styles for a smooth hover effect */
+.task-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
